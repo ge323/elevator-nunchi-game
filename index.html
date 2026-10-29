@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>엘베 눈치게임 - 퇴근길 엘리베이터 게임</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="w">
+  <canvas id="cv"></canvas>
+  <div id="hud"><span id="fl"></span><span id="rk"></span><span id="co"></span></div><button class="btn b3" id="bo">부스터</button>
+  <button class="btn b2" id="pb">일시정지</button><div id="say"></div>
+  <div id="hint">▶◀ 닫힘 버튼을 연타해!</div>
+  <div class="ov on" id="title">
+    <div class="sign" id="tt">엘베<br>눈치게임</div>
+    <div class="sub" style="margin-top:16px">퇴근길 엘리베이터<br>닫힘 버튼을 연타해서 도망쳐요</div>
+    <button class="btn" id="go">탑승하기</button><button class="btn b3" id="jb" style="display:none"></button><div style="display:flex;gap:10px"><button class="btn b2" id="dxb" style="min-width:0">엔딩 도감</button><button class="btn b2" id="mb" style="min-width:0">미션·업적</button></div><button class="btn b2" id="shb"><i class="coin"></i> 강화 상점</button>
+    <div class="sub" id="tb"></div>
+  </div>
+  <div class="ov" id="pz"><div class="sign" style="font-size:clamp(24px,8vw,38px)">일시정지</div><div class="sub" style="margin-top:14px">잠깐 자리를 비워도 괜찮아요</div><button class="btn" id="pr">계속하기</button><button class="btn b2" id="pq">그만하기</button></div>
+  <div class="ov" id="over" style="gap:8px">
+    <div class="sub" id="ot">같이 타버렸다...</div>
+    <div class="big" id="os"></div>
+    <div class="sub" id="ort" style="font-size:clamp(20px,6vw,28px)"></div>
+    <div class="sub" id="ob"></div>
+    <button class="btn" id="rv" style="background:#8ff0a4"></button><button class="btn b3" id="sh">친구에게 자랑하기</button>
+    <button class="btn" id="re">다시 탑승</button><div style="display:flex;gap:6px"><button class="btn b2" id="dxb2" style="min-width:0;padding:8px 8px">엔딩 도감</button><button class="btn b2" id="shb2" style="min-width:0;padding:8px 8px"><i class="coin"></i> 상점</button><button class="btn b2" id="mb2" style="min-width:0;padding:8px 8px">미션·업적</button></div>
+  </div>
+</div>
+<div class="ov" id="shop" style="position:fixed;z-index:5"><div class="pn"><div class="hd"><span>강화 상점<div class="hn" id="sc"></div></span><button class="xb" id="sx" aria-label="닫기">X</button></div><div class="bx" style="height:min(62dvh,440px)"><button class="btn" id="sr"></button><button class="btn b2" id="sy"></button><button class="btn b3" id="sj"></button><button class="btn" id="sz" style="background:#ff8a5c"></button><button class="btn" id="sl"></button><button class="btn" id="sb"></button><button class="btn b2" id="bk">기록 백업 코드 복사</button><button class="btn b2" id="bi">기록 불러오기</button><div id="bw" style="display:none;flex-direction:column;gap:8px"><textarea id="bt" style="width:100%;height:90px;font:inherit;font-weight:400" placeholder="백업 코드를 붙여넣으세요"></textarea><button class="btn" id="ba" style="background:#ff8a5c">이 코드로 덮어쓰기</button></div></div></div></div>
+<div class="ov" id="dexo" style="position:fixed;z-index:6;justify-content:center"><div id="dpn"><div id="dhd"><span id="dc"></span><button id="dxx" aria-label="닫기">X</button></div><div id="dbox" style="height:min(62dvh,440px);overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding:6px 8px 6px 0;border-top:3px solid #3a3a55;border-bottom:3px solid #3a3a55"><div id="dm" style="display:flex;flex-direction:column;gap:8px"></div><div id="dl" style="display:flex;flex-direction:column;gap:8px"></div></div></div></div>
+<div class="ov" id="mso" style="position:fixed;z-index:6"><div class="pn"><div class="hd"><span>미션·업적</span><button class="xb" id="msx" aria-label="닫기">X</button></div><div class="bx" id="mbx" style="height:min(66dvh,480px)"></div></div></div>
+<div class="ov" id="dtl" style="position:fixed;z-index:7"><div class="pn"><div class="hd"><span>엔딩 일기</span><span style="display:flex;gap:6px"><button class="xb nv" id="dtp" aria-label="이전">◀</button><button class="xb nv" id="dtn" aria-label="다음">▶</button><button class="xb" id="dtc" aria-label="닫기">X</button></span></div><div class="bx" style="height:min(68dvh,500px)"><div class="pg"><div class="dt" id="dd"></div><canvas id="dcv" width="160" height="110"></canvas><div class="cp" id="dcp"></div><div class="tx" id="dtt"></div></div></div></div></div>
+<div id="toast"></div>
+<script src="game.js"></script>
+</body>
+</html>
